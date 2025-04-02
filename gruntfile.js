@@ -75,5 +75,4 @@ module.exports = function (grunt) {
 
     // Register tasks.
     grunt.registerTask('default', ['ts', 'tslint', 'concurrent:dev']);
-    grunt.registerTask('serve', ['ts', 'tslint', 'concurrent:dev']);
 };

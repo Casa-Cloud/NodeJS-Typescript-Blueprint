@@ -9,8 +9,3 @@ npm install
 ```
 grunt default
 ```
-
-## Run code
-```
-grunt serve
-```
