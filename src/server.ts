@@ -40,6 +40,7 @@ app.use("/api/v1/user/", userManagementRouter.userRoute);
 /* Swagger */
 config.logger.info("config.swaggerEnabled - ", config.swaggerEnabled);
 if (config.swaggerEnabled === "true") {
+  config.logger.info("Swagger UI Enabled");
   const specs = swaggerJsdoc(config.swaggerJSdocsOptions);
   app.use("/api-docs",
     swaggerUi.serve, swaggerUi.setup(specs, config.swaggerOptions));

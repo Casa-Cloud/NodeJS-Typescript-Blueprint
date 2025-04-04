@@ -4,13 +4,9 @@ const { createLogger, format, transports } = require('winston');
 const DailyRotateFile = require("winston-daily-rotate-file");
 const { combine, timestamp, label, prettyPrint } = format;
 let swaggerEnabled = process.env.SWAGGER_ENABLE
-let PORT = process.env.PORT || 56368
+let PORT = process.env.PORT || 9000
+const path = require('path');
 
-const opt = {
-  customSiteTitle: "NodeJS Template API",
-  customCss: ".swagger-ui .topbar {background-color:rgb(19, 53, 223)}",
-  customfavIcon: "../images/casacloud.png",
-}
 const transport = new DailyRotateFile({
   filename: "logs/log-%DATE%.log",
   datePattern: "YYYY-MM-DD",
@@ -34,6 +30,12 @@ const logger = createLogger({
   ]
 });
 
+const opt = {
+  customSiteTitle: "NodeJS Template API",
+  customCss: ".swagger-ui .topbar {background-color:rgb(19, 53, 223)}",
+  customfavIcon: "../images/casacloud.png",
+}
+console.log(__dirname+"/../dist/src/routes"); 
 const options = {
   swaggerDefinition: {
     openapi: '3.0.1',
@@ -52,11 +54,11 @@ const options = {
   },
   // List of files to be processes. You can also set globs './routes/*.js'
   // apis: ["../../**/*.yaml"],
-  apis: ["**/*.ts"],
+  apis: [__dirname+"/../dist/src/routes/*.js"],
 };
 
 let config = {
-  "PORT": 8080,
+  "PORT": PORT,
   "swaggerOptions": opt,
   "swaggerJSdocsOptions": options,
   swaggerEnabled,
