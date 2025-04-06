@@ -4,7 +4,7 @@
   "description": "This is the nodejs project template with sample routes and controllers with prod ready typescript standard ",
   "main": "server.js",
   "scripts": {
-    "test": "npm test"
+    "build": "grunt build"
   },
   "repository": {
     "type": "git",
@@ -24,14 +24,10 @@
   "devDependencies": {
     "@types/express": "^5.0.1",
     "@types/node": "^22.13.16",
-    "grunt": "^1.6.1",
-    "grunt-cli": "^1.5.0",
     "grunt-concurrent": "^3.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-newer": "^1.3.0",
-    "grunt-nodemon": "^0.4.2",
-    "grunt-ts": "^6.0.0-beta.22",
-    "grunt-tslint": "^5.0.2"
+    "grunt-nodemon": "^0.4.2"
     
   },
   "dependencies": {
@@ -41,6 +37,10 @@
     "winston": "^3.17.0",
     "winston-daily-rotate-file": "^5.0.0",
     "swagger-ui-express": "^5.0.1",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "grunt": "^1.6.1",
+    "grunt-cli": "^1.5.0",
+    "grunt-ts": "^6.0.0-beta.22",
+    "grunt-tslint": "^5.0.2"
   }
 }

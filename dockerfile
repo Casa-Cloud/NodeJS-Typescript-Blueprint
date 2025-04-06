@@ -9,12 +9,19 @@ ARG APP_PORT=9001
 
 # Copy only necessary files for production
 COPY package*.json ./
-COPY dist ./dist
+COPY src ./src
 COPY config ./config
+COPY gruntfile.js ./gruntfile.js
+COPY tsconfig.json ./tsconfig.json
+COPY tslint.json ./tslint.json
 
 # Install only production dependencies
 RUN npm install --production
-
+RUN npm run build
+RUN rm -rf src
+RUN rm -rf gruntfile.js
+RUN rm -rf tsconfig.json
+RUN rm -rf tslint.json
 # Set the environment variables (if needed)
 ENV SWAGGER_ENABLE=true
 ENV PORT=$APP_PORT

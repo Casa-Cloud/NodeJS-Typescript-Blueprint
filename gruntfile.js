@@ -68,4 +68,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-concurrent');
   // Register tasks.
   grunt.registerTask('default', ['ts', 'tslint', 'concurrent:dev']);
+  grunt.registerTask('build', ['ts', 'tslint']);
 };
