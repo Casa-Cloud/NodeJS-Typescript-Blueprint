@@ -17,11 +17,16 @@ COPY tslint.json ./tslint.json
 
 # Install only production dependencies
 RUN npm install --production
+
+# Comple source code
 RUN npm run build
+
+# Remove Source code and unnecessary files
 RUN rm -rf src
 RUN rm -rf gruntfile.js
 RUN rm -rf tsconfig.json
 RUN rm -rf tslint.json
+
 # Set the environment variables ( if needed)
 ENV SWAGGER_ENABLE=true
 ENV PORT=$APP_PORT
