@@ -27,9 +27,9 @@ RUN rm -rf gruntfile.js
 RUN rm -rf tsconfig.json
 RUN rm -rf tslint.json
 
-# Set the environment variables ( if needed)
-ENV SWAGGER_ENABLE=true
-ENV PORT=$APP_PORT
+# Set the environment variables ( if needed) 
+# ENV SWAGGER_ENABLE=true
+# ENV PORT=$APP_PORT
 
 # Expose the port your microservice runs on (e.g., 3000)
 EXPOSE $APP_PORT
