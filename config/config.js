@@ -21,7 +21,7 @@ const logger = createLogger({
     label({ label: "nodeTemplate" }),
     timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
     format.json(),
-    prettyPrint(),
+    // prettyPrint(), this will print logs in multiple lines in log workspace
     format.colorize()
   ),
   transports: [
